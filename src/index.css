@@ -1,13 +1,99 @@
-body {
+:root {
+  --max-width: 1170px;
+  --clr-green-light: #7affa8;
+  --clr-blue-dark: #233dff;
+  --clr-grey-10: #dedede;
+  --clr-white-1: #d7e5ed;
+}
+
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cascadia Code, Helvetica, Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  font-family: Cascadia Code, Helvetica, Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-white-1);
+  line-height: 1.2;
+  font-size: 1.2rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.drum {
+  max-width: 800px;
+  padding: 5px 5px 30px 5px;
+  background-color: #313133;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+.pads-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#drum-pads {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.drum-pad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  flex-basis: 120px;
+  height: 120px;
+  background-color: #17161b;
+  border-radius: 2px;
+  border: 2px solid #000;
+  box-shadow: 0px 1px #17161b;
+}
+.drum-pad {
+  cursor: pointer;
+}
+.drum-pad:active {
+  box-shadow: 0 1px 3px hsl(0deg 0% 100% / 10%),
+    0 1px 2px hsl(0deg 0% 100% / 18%);
+  transform: translateY(1.5px);
+}
+
+.display-container {
+  display: flex;
+  padding: 10px;
+  background-color: #000;
+}
+.drum-display {
+  flex-basis: 300px;
+  background-color: #588efc;
+  color: --clr-white-1;
+  font-weight: 700;
+  padding: 5px;
+  border: 1px solid #000;
+}
+#inner-display {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 15px;
+  background-color: #5e79fd;
+}
+
+.settings-container {
+  display: flex;
+  padding: 10px;
+}
+
+input[type="range"] {
+  width: 80px;
+  height: 205px;
+  -webkit-appearance: slider-vertical;
 }
