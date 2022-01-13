@@ -15,7 +15,15 @@ function App() {
   const updateDisplay = (name) => {
     setDisplay(name);
   };
-
+  const changeBank = () => {
+    if (padState.padBank === padBanks.heater) {
+      setPadState({ ...padState, padBank: padBanks.chord });
+      setDisplay("Preset: 2 Chord");
+    } else {
+      setPadState({ ...padState, padBank: padBanks.heater });
+      setDisplay("Preset: 1 Heater");
+    }
+  };
   const updateVolume = (e) => {
     setPadState({
       ...padState,
@@ -37,7 +45,11 @@ function App() {
           volume={padState.volume}
         />
         <div className="settings-container">
-          <Settings volume={padState.volume} updateVolume={updateVolume} />
+          <Settings
+            volume={padState.volume}
+            updateVolume={updateVolume}
+            changeBank={changeBank}
+          />
         </div>
       </div>
     </div>

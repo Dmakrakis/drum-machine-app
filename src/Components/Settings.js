@@ -1,6 +1,6 @@
 import React from "react";
 
-const Settings = ({ volume, updateVolume }) => {
+const Settings = ({ volume, updateVolume, changeBank }) => {
   return (
     <div>
       <div id="volume" className="setting">
@@ -13,6 +13,14 @@ const Settings = ({ volume, updateVolume }) => {
           id="volume-range"
           onChange={updateVolume}
         />
+      </div>
+
+      <div id="bank" className="bank">
+        <label style={{ display: "block" }}>Preset</label>
+        <label className="switch" style={{ display: "block" }}>
+          <input type="checkbox" id="bank-change" onChange={changeBank} />
+          <span class="slider"></span>
+        </label>
       </div>
     </div>
   );
