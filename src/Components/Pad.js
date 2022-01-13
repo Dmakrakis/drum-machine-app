@@ -9,7 +9,7 @@ const Pad = ({ id, name, src, updateDisplay, volume }) => {
     updateDisplay(name);
   };
   return (
-    <div className="drum-pad" onClick={playClip}>
+    <div className="drum-pad noSelect" onClick={playClip}>
       {id}
       <audio className="clip" id={id} src={src}></audio>
     </div>

@@ -28,7 +28,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .drum {
   max-width: 800px;
   padding: 5px 5px 30px 5px;
@@ -90,10 +98,4 @@ code {
 .settings-container {
   display: flex;
   padding: 10px;
-}
-
-input[type="range"] {
-  width: 80px;
-  height: 205px;
-  -webkit-appearance: slider-vertical;
 }
