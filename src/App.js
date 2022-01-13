@@ -6,22 +6,30 @@ import Pads from "./Components/Pads";
 import Settings from "./Components/Settings";
 
 function App() {
+  const [display, setDisplay] = useState("Preset: 1 Heater");
+
   const [padState, setPadState] = useState({
     padBank: padBanks.heater,
-    display: "Preset: 1 Heater",
     volume: 50,
   });
   const updateDisplay = (name) => {
-    setPadState({ ...padState, display: name });
+    setDisplay(name);
   };
 
   const updateVolume = (e) => {
-    setPadState({ ...padState, volume: e.target.value });
+    setPadState({
+      ...padState,
+      volume: e.target.value,
+    });
+    setDisplay("volume " + e.target.value);
+    setTimeout(() => {
+      setDisplay("");
+    }, 800);
   };
 
   return (
     <div className="drum" id="drum-machine">
-      <Display display={padState.display} />
+      <Display display={display} />
       <div className="pads-container">
         <Pads
           padBank={padState.padBank}

@@ -79,6 +79,7 @@ code {
   display: flex;
   padding: 10px;
   background-color: #000;
+  height: 100px;
 }
 .drum-display {
   flex-basis: 300px;
@@ -98,4 +99,11 @@ code {
 .settings-container {
   display: flex;
   padding: 10px;
+}
+
+#volume {
+  text-align: center;
+}
+
+#volumeVal {
 }

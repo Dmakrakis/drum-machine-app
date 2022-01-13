@@ -4,7 +4,7 @@ const Settings = ({ volume, updateVolume }) => {
   return (
     <div>
       <div id="volume" className="setting">
-        <label style={{ display: "block" }}>Volume</label>
+        <label style={{ display: "block" }}>- Volume +</label>
         <input
           type="range"
           min="1"
